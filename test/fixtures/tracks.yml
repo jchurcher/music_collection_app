@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  length: MyString
+  genre: MyString
+  release_date: 2020-12-05
+
+two:
+  name: MyString
+  length: MyString
+  genre: MyString
+  release_date: 2020-12-05

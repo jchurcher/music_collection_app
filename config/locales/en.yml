@@ -30,6 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  app_title: "My music collection"
+  app_description: "A space for your music library"
+
   home:
     home:
       title: "Welcome to your music collection"

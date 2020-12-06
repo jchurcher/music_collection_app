@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @track.name
+%p
+  %b Length:
+  = @track.length
+%p
+  %b Genre:
+  = @track.genre
+%p
+  %b Release date:
+  = @track.release_date
+
+= link_to 'Edit', edit_track_path(@track)
+\|
+= link_to 'Back', tracks_path
