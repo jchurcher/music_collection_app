@@ -10,6 +10,18 @@
   %b Genre:
   = @album.genre
 
+%p Tracks:
+%table
+  %tbody
+    -@album.tracks.each do |track|
+      %tr{id: "track#{track.id}"}
+        %td= track.name
+        %td= link_to 'Show', track
+        %td= link_to 'Edit', edit_track_path(track)
+        %td= link_to 'Destroy', track, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true
+
+%p= link_to 'Add Track', new_track_path(album_id: @album)
+
 = link_to 'Edit', edit_album_path(@album)
 \|
 = link_to 'Back', albums_path
