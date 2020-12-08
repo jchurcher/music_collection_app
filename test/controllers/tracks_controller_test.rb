@@ -6,10 +6,10 @@ class TracksControllerTest < ActionDispatch::IntegrationTest
     @album = albums(:one)
   end
 
-  test "should get index" do
-    get tracks_url
-    assert_response :success
-  end
+  # test "should get index" do
+  #   get tracks_url
+  #   assert_response :success
+  # end
 
   test "should get new" do
     get new_track_url(album_id: @album.id)
