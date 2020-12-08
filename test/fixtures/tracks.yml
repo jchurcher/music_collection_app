@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  length: MyString
-  genre: MyString
+  name: Track
+  length: "1:00"
+  genre: Pop
   release_date: 2020-12-05
+  album: one
 
 two:
-  name: MyString
-  length: MyString
-  genre: MyString
+  name: Song
+  length: "2:00"
+  genre: HipHop
   release_date: 2020-12-05
+  album: two

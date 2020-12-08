@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  genre: MyString
+  title: MyAlbum
+  description: "This is an album"
+  genre: AlbumGenre
 
 two:
-  title: MyString
-  description: MyText
-  genre: MyString
+  title: MyAlbum2
+  description: "This is another album"
+  genre: AlbumGenre2

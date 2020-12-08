@@ -75,9 +75,6 @@ class TracksController < ApplicationController
     end
 
     def set_album
-      puts "============"
-      puts @album
-      puts "============"
       @album = Album.find_by(id: params[:album_id]) || Album.find(track_params[:album_id])
     end
 end
