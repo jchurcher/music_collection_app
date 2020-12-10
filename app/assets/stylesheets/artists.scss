@@ -1,3 +1,64 @@
 // Place all the styles related to the Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-size: 70px;
+}
+p1 {
+  font-size: 30px;
+  // margin: 50px 0px 50px 0px;
+}
+p2 {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+  display: block;
+}
+hr {
+  margin: 40px 0px 10px 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+  // grid-template-rows: repeat(auto-fill,minmax(100px,1fr));
+  grid-auto-rows: 100px;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: minmax(100px,1fr), 1fr;
+  grid-gap: 50px 10px;
+  // background-color: #2196F3;
+  // padding: 10px;
+}
+.grid-item {
+  // background-color: rgba(255, 255, 255, 0.8);
+  // border: 1px solid rgba(0, 0, 0, 0.8);
+  // padding: 20px;
+  // font-size: 30px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.button_to {
+  height: 100%;
+}
+#albumTitle {
+  font-size: 30px;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0px 0px 0px 0px;
+}
+#btnDestroy {
+  height: 30%;
+  font-size: 15px;
+}
+#footer {
+  position: fixed;
+  bottom: 60px;
+}
+// footer > * {
+//   padding: 20px 0px 20px 0px;
+// }

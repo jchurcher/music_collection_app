@@ -1,24 +1,27 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @artist.name
-%p
-  %b Description:
+%p2
+  %b Artist
+%h1
+  %b= @artist.name
+%p1
   = @artist.description
 
-%p Albums:
-%table
-  %tbody
-    -@artist.albums.each do |album|
-      %tr{id: "album#{album.id}"}
-        %td= album.title
-        %td= link_to 'Show', album
-        %td= link_to 'Edit', edit_album_path(album)
-        %td= link_to 'Destroy', album, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true
+%hr
+
+%p2 Discography:
 
 %p= link_to 'Add Album', new_album_path(artist_id: @artist)
 
-= link_to 'Edit', edit_artist_path(@artist)
-\|
-= link_to 'Back', artists_path
+%div{:class=>"grid-container"}
+  -@artist.albums.each do |album|
+    %div{:class=>"grid-item"}
+      = button_to album, method: :get do
+        %div{:id=>"albumTitle"}= album.title
+        %div= "By #{album.artist.name}"
+      = button_to album, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true, :id=>"btnDestroy" do
+        %div= "Destroy"
+
+%div{:id=>"footer"}
+
+  = link_to 'Edit', edit_artist_path(@artist)
+  \|
+  = link_to 'Back', artists_path

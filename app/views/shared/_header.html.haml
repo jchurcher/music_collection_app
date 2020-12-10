@@ -1,2 +1,14 @@
 -flash.each do |key, value|
   = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+
+%div{:class=>"header-grid"}
+  %div{:class=>"header-grid-item"}
+    = button_to 'Home', root_url, method: :get, :class=>"header-grid-item"
+  %div{:class=>"header-grid-item"}
+    = button_to 'Contact', contact_path, method: :get, :class=>"header-grid-item"
+  %div{:class=>"header-grid-item"}
+    = button_to 'All Artists', artists_path, method: :get, :class=>"header-grid-item"
+  %div{:class=>"header-grid-item"}
+    = button_to 'All Albums', albums_path, method: :get, :class=>"header-grid-item"
+
+%hr

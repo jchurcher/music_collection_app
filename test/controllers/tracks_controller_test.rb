@@ -46,6 +46,6 @@ class TracksControllerTest < ActionDispatch::IntegrationTest
       delete track_url(@track)
     end
 
-    assert_redirected_to tracks_url
+    assert_redirected_to album_path(@track.album.id)
   end
 end

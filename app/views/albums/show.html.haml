@@ -1,27 +1,33 @@
-%p#notice= notice
-
-%p
-  %b Title:
+%h1
+  %b Album:
   = @album.title
-%p
-  %b Description:
+%p1
   = @album.description
-%p
+%p2
   %b Genre:
   = @album.genre
 
-%p Tracks:
-%table
-  %tbody
-    -@album.tracks.each do |track|
-      %tr{id: "track#{track.id}"}
-        %td= track.name
-        %td= link_to 'Show', track
-        %td= link_to 'Edit', edit_track_path(track)
-        %td= link_to 'Destroy', track, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true
+%hr
 
+%p2 Tracks:
 %p= link_to 'Add Track', new_track_path(album_id: @album, artist_id: @artist)
 
-= link_to 'Edit', edit_album_path(@album)
-\|
-= link_to 'Back', albums_path
+
+%div{:class=>"grid-container-across", :id=>"gridMargin"}
+  -count = 0
+  -@album.tracks.each do |track|
+    -count += 1
+    %div{:class=>"grid-item"}
+      = button_to track, method: :get, :id=>"btnShow" do
+        %div{:class=>"grid-container-across"}
+          %div= "##{count} - #{track.name}"
+          %div= track.length
+    %div{:class=>"grid-item"}
+      = button_to track, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true do
+        %div= "Destroy"
+
+%div{:id=>"footer"}
+
+  = link_to 'Edit', edit_album_path(@album)
+  \|
+  = link_to 'Back', artist_path(@album.artist.id)
