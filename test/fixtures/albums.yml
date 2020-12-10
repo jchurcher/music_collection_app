@@ -4,8 +4,10 @@ one:
   title: MyAlbum
   description: "This is an album"
   genre: AlbumGenre
+  artist: one
 
 two:
   title: MyAlbum2
   description: "This is another album"
   genre: AlbumGenre2
+  artist: two

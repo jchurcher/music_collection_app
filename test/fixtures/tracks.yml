@@ -6,6 +6,7 @@ one:
   genre: Pop
   release_date: 2020-12-05
   album: one
+  artist: one
 
 two:
   name: Song
@@ -13,3 +14,4 @@ two:
   genre: HipHop
   release_date: 2020-12-05
   album: two
+  artist: two

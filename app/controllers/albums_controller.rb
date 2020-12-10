@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:new, :create]
 
   # GET /albums
   # GET /albums.json
@@ -15,7 +16,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/new
   def new
-    @album = Album.new
+    @album = @artist.albums.new
   end
 
   # GET /albums/1/edit
@@ -65,11 +66,19 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
+      # puts "------------------------------------------------------------------V"
+      # puts params
       @album = Album.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def album_params
-      params.require(:album).permit(:title, :description, :genre)
+      params.require(:album).permit(:artist_id, :title, :description, :genre)
+    end
+
+    def set_artist
+      # puts "------------------------------------------------------------------S"
+      # puts params
+      @artist = Artist.find_by(id: params[:artist_id]) || Artist.find(album_params[:artist_id])
     end
 end

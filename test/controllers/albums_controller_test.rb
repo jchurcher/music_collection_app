@@ -3,6 +3,7 @@ require 'test_helper'
 class AlbumsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @album = albums(:one)
+    @artist = artists(:one)
   end
 
   test "should get index" do
@@ -11,7 +12,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_album_url
+    get new_album_url(artist_id: @artist)
     assert_response :success
   end
 
@@ -19,12 +20,12 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
     # #-----------------------------
     # puts "=============="
     # Album.all.each do |n|
-    #   puts n.title
+    #   puts n.artist.name
     # end
-    # puts @album.title
+    # puts @album.artist.name
     # #-----------------------------
     assert_difference('Album.count') do
-      post albums_url, params: { album: { description: @album.description, genre: @album.genre, title: "create" } }
+      post albums_url, params: { album: { artist_id: @artist.id, description: @album.description, genre: @album.genre, title: "create" } }
     end
 
     assert_redirected_to album_url(Album.last)

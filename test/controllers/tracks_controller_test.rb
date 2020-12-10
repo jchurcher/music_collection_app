@@ -4,6 +4,7 @@ class TracksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @track = tracks(:one)
     @album = albums(:one)
+    @artist = artists(:one)
   end
 
   # test "should get index" do
@@ -13,12 +14,13 @@ class TracksControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_track_url(album_id: @album.id)
+    # get new_track_url, params: { track: { album_id: @album.id, artist_id: @artist.id, genre: @track.genre, length: @track.length, name: "track", release_date: @track.release_date } }
     assert_response :success
   end
 
   test "should create track" do
     assert_difference('Track.count') do
-      post tracks_url, params: { track: { album_id: @album.id, genre: @track.genre, length: @track.length, name: "track", release_date: @track.release_date } }
+      post tracks_url, params: { track: { album_id: @album.id, artist_id: @artist.id, genre: @track.genre, length: @track.length, name: "track", release_date: @track.release_date } }
     end
 
     assert_redirected_to track_url(Track.last)
