@@ -1,27 +1,33 @@
 %h1
-  %b Album:
+  %b= t('.title')
   = @album.title
 %p1
   = @album.description
 %p2
-  %b Genre:
+  %b= t('.genre_heading')
   = @album.genre
 
 %hr
 
-%p2 Tracks:
+%p2= t('.tracks_heading')
 %p= link_to 'Add Track', new_track_path(album_id: @album, artist_id: @artist)
 
-
+-# Creates a grid to allow all associated tracks to be displayed in
 %div{:class=>"grid-container-across", :id=>"gridMargin"}
   -count = 0
   -@album.tracks.each do |track|
     -count += 1
+
+    -# Allocates one grid item to show a track
     %div{:class=>"grid-item"}
       = button_to track, method: :get, :id=>"btnShow" do
+      
+        -# Creates a grid to format the text within the button
         %div{:class=>"grid-container-across"}
           %div= "##{count} - #{track.name}"
           %div= track.length
+
+    -# Allocated one grid item to destroy a track
     %div{:class=>"grid-item"}
       = button_to track, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true do
         %div= "Destroy"

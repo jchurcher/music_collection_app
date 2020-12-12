@@ -1,5 +1,5 @@
 %p2
-  %b Artist
+  %b= t('.title')
 %h1
   %b= @artist.name
 %p1
@@ -7,16 +7,22 @@
 
 %hr
 
-%p2 Discography:
+%p2= t('.albums_heading')
 
 %p= link_to 'Add Album', new_album_path(artist_id: @artist)
 
+-# Creates a grid to allow all associated albums to be displayed in
 %div{:class=>"grid-container"}
+  -# Loops through a list of all album objects associated with this artist
   -@artist.albums.each do |album|
     %div{:class=>"grid-item"}
+
+      -# Creates button that shows the album
       = button_to album, method: :get do
         %div{:id=>"albumTitle"}= album.title
         %div= "By #{album.artist.name}"
+
+      -# Creates button that destroys the album
       = button_to album, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true, :id=>"btnDestroy" do
         %div= "Destroy"
 

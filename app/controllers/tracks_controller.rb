@@ -37,6 +37,7 @@ class TracksController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @track.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

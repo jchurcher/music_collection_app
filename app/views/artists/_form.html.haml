@@ -1,4 +1,5 @@
-= form_for @artist do |f|
+-# Produces a form to input artist data
+= form_with model: @artist do |f|
   - if @artist.errors.any?
     #error_explanation
       %h2= "#{pluralize(@artist.errors.count, "error")} prohibited this artist from being saved:"
@@ -6,11 +7,14 @@
         - @artist.errors.full_messages.each do |message|
           %li= message
 
+  -# Artist name
   .field
-    = f.label :name
+    = f.label :name, :class=>"form-labels"
     = f.text_field :name
+
+  -# Artist description
   .field
-    = f.label :description
+    = f.label :description, :class=>"form-labels"
     = f.text_area :description
   .actions
     = f.submit 'Save'

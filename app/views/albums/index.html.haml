@@ -1,35 +1,17 @@
-%h1 Listing albums
+%h1= t('.title')
 
--# %table
--#   %thead
--#     %tr
--#       %th Title
--#       %th Description
--#       %th Genre
--#       %th
--#       %th
--#       %th
--#
--#   %tbody
--#     - @albums.each do |album|
--#       %tr
--#         %td= album.title
--#         %td= album.description
--#         %td= album.genre
--#         %td= link_to 'Show', album
--#         %td= link_to 'Edit', edit_album_path(album)
--#         %td= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }
-
--# %p --------------------------
-
--# %p= link_to 'New Album', new_album_path
-
+-# Creates a grid to allow all albums to be displayed in
 %div{:class=>"grid-container"}
+  -# Loops through a list of all album objects
   -@albums.each do |album|
     %div{:class=>"grid-item"}
+
+      -# Creates button that shows the album
       = button_to album, method: :get do
         %div{:id=>"albumTitle"}= album.title
         %div= "By #{album.artist.name}"
+
+      -# Creates button that destroys the album
       = button_to album, :method => :delete, :data => {:confirm => 'Are you sure?'}, :remote => true, :id=>"btnDestroy" do
         %div= "Destroy"
 

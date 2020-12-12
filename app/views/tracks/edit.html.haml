@@ -1,7 +1,7 @@
-%h1 Editing track
+%h1= t('.title')
 
 = render 'form'
 
 = link_to 'Show', @track
 \|
-= link_to 'Back', tracks_path
+= link_to 'Back', album_path(@track.album.id)

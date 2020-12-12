@@ -70,3 +70,5 @@ gem 'modernizr-rails'
 gem 'rails-controller-testing'
 
 gem 'devise'
+
+gem 'jquery-rails'

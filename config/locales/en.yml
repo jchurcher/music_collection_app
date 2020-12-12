@@ -38,6 +38,11 @@ en:
       title: "Welcome to your music collection"
       welcome: "Access all of your music library including:"
 
+      list_item_1: Tracks
+      list_item_2: Artists
+      list_item_3: Albums
+      list_item_4: Your favourites
+
     contact:
       title: "Contact Us"
       contact_us: "Please enter your contact information below"
@@ -55,3 +60,38 @@ en:
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. we will be in touch shortly.
+
+  artists:
+    edit:
+      title: Editing artist
+    index:
+      title: Listing artists
+    new:
+      title: New artist
+    show:
+      title: Artist
+      albums_heading: "Discography:"
+
+  albums:
+    edit:
+      title: Editing album
+    index:
+      title: Listing albums
+    new:
+      title: New album
+    show:
+      title: "Album:"
+      genre_heading: "Genre:"
+      tracks_heading: "Tracks:"
+
+  tracks:
+    edit:
+      title: Editing track
+    index:
+      title: Listing tracks
+    new:
+      title: New track
+    show:
+      length_heading: "Length:"
+      genre_heading: "Genre:"
+      release_heading: "Release date:"

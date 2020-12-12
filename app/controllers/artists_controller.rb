@@ -33,6 +33,7 @@ class ArtistsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

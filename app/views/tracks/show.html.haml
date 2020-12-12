@@ -1,13 +1,13 @@
 %h1
   = @track.name
 %p1
-  %b Length:
+  %b= t('.length_heading')
   = @track.length
 %p2
-  %b Genre:
+  %b= t('.genre_heading')
   = @track.genre
 %p2
-  %b Release date:
+  %b= t('.release_heading')
   = @track.release_date
 
 = link_to 'Edit', edit_track_path(@track)

@@ -1,19 +1,14 @@
-%h1 Listing artists
+%h1= t('.title')
 
 %table
   %thead
     %tr
       %th Artist
-      -# %th Description
-      %th
-      %th
-      %th
 
   %tbody
     - @artists.each do |artist|
       %tr
         %td= artist.name
-        -# %td= artist.description
         %td= button_to 'Show', artist, method: :get
         %td= button_to 'Edit', edit_artist_path(artist), method: :get
         %td= button_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' }

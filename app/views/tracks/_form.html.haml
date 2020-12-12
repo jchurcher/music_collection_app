@@ -1,4 +1,5 @@
-= form_for @track do |f|
+-# Produces a form to input track data
+= form_with model: @track, id: :form do |f|
   - if @track.errors.any?
     #error_explanation
       %h2= "#{pluralize(@track.errors.count, "error")} prohibited this track from being saved:"
@@ -6,27 +7,34 @@
         - @track.errors.full_messages.each do |message|
           %li= message
 
+  -# Display album and artist name that will be associated with this album
+  %p1= "#{@track.album.title} - #{@track.artist.name}"
+
   .field
-    = f.label :album
-    -# = f.text_field :album?
-    %p= "#{@track.album.title} - #{@track.artist.name}"
+    -# Adds the album id this album will be associated
     =f.hidden_field :album_id, value: @track.album.id
   .field
-    = f.label :artist
-    -# = f.collection_select(:artist_id, Artist.all, :id, :name)
-    %p= "#{@track.artist.name}"
+    -# Adds the artist id this album will be associated
     =f.hidden_field :artist_id, value: @track.artist.id
+
+  -# Track name
   .field
-    = f.label :name
+    = f.label :name, :class=>"form-labels"
     = f.text_field :name
+
+  -# Track length
   .field
-    = f.label :length
+    = f.label :length, :class=>"form-labels"
     = f.text_field :length
+
+  -# Track genre
   .field
-    = f.label :genre
+    = f.label :genre, :class=>"form-labels"
     = f.text_field :genre
+
+  -# Track release date
   .field
-    = f.label :release_date
+    = f.label :release_date, :class=>"form-labels"
     = f.date_select :release_date
   .actions
     = f.submit 'Save'

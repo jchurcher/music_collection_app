@@ -31,8 +31,31 @@ footer {
   height: 100%;
 }
 
+hr {
+  margin: 40px 0px 10px 0px;
+}
+
 h1 {
   line-height: normal;
   margin-top: 0px;
   font-size: 70px;
+}
+p1 {
+  font-size: 30px;
+  // margin: 50px 0px 50px 0px;
+}
+p2 {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+  display: block;
+}
+
+textarea {
+  margin-left: 10px;
+}
+.form-labels {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+  display: block;
+  margin-top: 30px;
 }

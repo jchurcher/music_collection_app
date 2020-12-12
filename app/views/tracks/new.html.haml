@@ -1,5 +1,5 @@
-%h1 New track
+%h1= t('.title')
 
 = render 'form'
 
-= link_to 'Back', tracks_path
+= link_to 'Back', album_path(@track.album.id)

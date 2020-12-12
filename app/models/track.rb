@@ -3,4 +3,5 @@ class Track < ApplicationRecord
   belongs_to :artist
 
   validates :name, :length, :release_date, presence: true
+  validates :name, uniqueness: true
 end

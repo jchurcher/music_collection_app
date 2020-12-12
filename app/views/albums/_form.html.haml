@@ -1,4 +1,5 @@
-= form_for @album do |f|
+-# Produces a form to input album data
+= form_with model: @album do |f|
   - if @album.errors.any?
     #error_explanation
       %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
@@ -6,20 +7,26 @@
         - @album.errors.full_messages.each do |message|
           %li= message
 
+  -# Display artists name that will be associated with this album
+  %p1= @album.artist.name
+
   .field
-    = f.label :artist
-    -# = f.text_field :artist?
-    %p= @album.artist.name
-    -# %p= @artist.name
+    -# Adds the artist id this album will be associated
     =f.hidden_field :artist_id, value: @album.artist.id
+
+  -# Album title
   .field
-    = f.label :title
+    = f.label :title, :class=>"form-labels"
     = f.text_field :title
+
+  -# Album description
   .field
-    = f.label :description
+    = f.label :description, :class=>"form-labels"
     = f.text_area :description
+
+  -# Album genre
   .field
-    = f.label :genre
+    = f.label :genre, :class=>"form-labels"
     = f.text_field :genre
   .actions
     = f.submit 'Save'

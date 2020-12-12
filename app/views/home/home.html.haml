@@ -2,7 +2,5 @@
 %p= t('.welcome')
 
 %ul
-  %li Tracks
-  %li Artists
-  %li Albums
-  %li Your favourites
+  -4.times do |i|
+    %li= t(".list_item_#{i+1}")
