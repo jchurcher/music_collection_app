@@ -6,6 +6,8 @@ document.addEventListener 'turbolinks:load', ->
 
   name = $('input[name="artist[name]"]')[0]
 
+  console.log(name.value)
+
   if !name.value
     name.setCustomValidity 'Cannot be null'
 
