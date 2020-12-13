@@ -7,6 +7,4 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'
-
-  # get 'artists/:artist_id/tracks/:album_id', to: 'tracks#create'
 end

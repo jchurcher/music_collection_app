@@ -1,6 +1,15 @@
 %h1= t('.title')
-%p= t('.welcome')
+%p2= t('.welcome')
+
+%ul
+  -3.times do |i|
+    %li= t(".list_item_#{i+1}")
+
+-4.times do
+  %br
+
+%p2= t('.help_title')
 
 %ul
   -4.times do |i|
-    %li= t(".list_item_#{i+1}")
+    %li= t(".help_#{i+1}")

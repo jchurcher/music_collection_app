@@ -36,12 +36,17 @@ en:
   home:
     home:
       title: "Welcome to your music collection"
-      welcome: "Access all of your music library including:"
+      welcome: "Access, Edit and Create your entire music library including:"
 
       list_item_1: Tracks
       list_item_2: Artists
       list_item_3: Albums
-      list_item_4: Your favourites
+
+      help_title: "Help:"
+      help_1: "Use the buttons in the header to return to home, contact via email or view all artists and albums"
+      help_2: 'To add an artist: go to all artists, click "New Artist" and fill in the form'
+      help_3: 'To add an album from an artist: click on an artist, click "New Album" and fill in the form'
+      help_4: 'To add a track from an album: click on an album, click "New Track" and fill in the form'
 
     contact:
       title: "Contact Us"
