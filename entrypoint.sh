@@ -8,18 +8,18 @@ rm -f /tmp/pids/server.pid
 # sleep 14
 
 # Check and wait for mysql container to be setup and connected
-echo "Waiting for MySQL DB connection ..."
+# echo "Waiting for MySQL DB connection ..."
 
-status=$(nc -z db 3306; echo $?)
-echo $status
+# status=$(nc -z db 3306; echo $?)
+# echo $status
 
-while [ $status != 0 ]
-do
-  echo "Waiting 3s ..."
-  sleep 3s
-  status=$(nc -z db 3306; echo $?)
-  echo $status
-done
+# while [ $status != 0 ]
+# do
+#   echo "Waiting 3s ..."
+#   sleep 3s
+#   status=$(nc -z db 3306; echo $?)
+#   echo $status
+# done
 
 echo "DB is up ..."
 
