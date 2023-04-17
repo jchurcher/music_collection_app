@@ -3,7 +3,8 @@ FROM ruby:2.5.1
 RUN apt-get update
 RUN apt-get install -y nodejs
 RUN gem install bundler -v 1.17.3
-RUN apt-get install -y default-mysql-client
+# RUN apt-get install -y default-mysql-client
+RUN apt-get install -y sqlite
 RUN apt-get install -y netcat
 RUN apt-get install -y dos2unix
 
