@@ -112,4 +112,59 @@ artist1.albums.last.tracks.create({
     :artist_id => artist1.id
 })
 
+#-----The 1975
+#--------I like it when you sleep, for you are so beautiful yet so unaware of it
+#-----------Somebody Else
+#-----------Paris
+#--------The 1975 (Deluxe)
+#-----------Robbers
+#-----------Chocolate
+artist2 = Artist.create({
+    :name => "The 1975"
+})
+artist2.albums.create({
+    :title => "I like it when you sleep, for you are so beautiful yet so unaware of it",
+    :genre => "Alternative/Indie",
+    :artist_id => artist2.id
+})
+artist2.albums.last.tracks.create({
+    :name => "Somebody Else",
+    :length => "5:47",
+    :genre => "Alternative/Indie",
+    :release_date => "04/11/2022",
+    :album_id => artist2.albums.last.id,
+    :artist_id => artist2.id
+})
+artist2.albums.last.tracks.create({
+    :name => "Paris",
+    :length => "4:53",
+    :genre => "Alternative/Indie",
+    :release_date => "04/11/2022",
+    :album_id => artist2.albums.last.id,
+    :artist_id => artist2.id
+})
+
+artist2.albums.create({
+    :title => "The 1975 (Deluxe)",
+    :genre => "Alternative/Indie",
+    :artist_id => artist2.id
+})
+artist2.albums.last.tracks.create({
+    :name => "Robbers",
+    :length => "4:14",
+    :genre => "Alternative/Indie",
+    :release_date => "25/09/2020",
+    :album_id => artist2.albums.last.id,
+    :artist_id => artist2.id
+})
+artist2.albums.last.tracks.create({
+    :name => "Chocolate",
+    :length => "3:44",
+    :genre => "Alternative/Indie",
+    :release_date => "25/09/2020",
+    :album_id => artist2.albums.last.id,
+    :artist_id => artist2.id
+})
+
 artist1.save!
+artist2.save!
