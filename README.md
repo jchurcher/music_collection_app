@@ -2,12 +2,13 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Setup](#inital-setup)
+* [Setup](#initial-setup)
 * [Website](#accessing-the-website)
 * [Running tests](#running-tests)
 * [Seeds](#seeding-the-database)
 
----
+## General Info
+This project is an example of using the ruby on rails framework to store and retrieve data in a relational database.
 
 ## Technologies
 * Ruby 2.5.1
@@ -37,9 +38,7 @@ rails db
 ```
 This project uses sqlite3 to manage the database.
 
----
-
-## Accessing website
+## Accessing the website
 Once the docker container is fully up and running the webserver should be hosted on locally on port ```3000```.
 ```
 localhost:3000
@@ -47,8 +46,6 @@ localhost:3000
 The website contains four views: "Home", "Contact", "All Artists, "All Albums".
 
 <img class="img-fluid" src="./README/Homepage.png" alt="img-verification" width=50%>
-
----
 
 ## Running tests
 All tests are held in the test directory which includes tests for the controllers, models, and the mailer along with fixtures (sample data). To run the test suite, access the bash of the rails container using the [command](#running-bash-on-rails-container) above. Then run:
@@ -70,8 +67,6 @@ Finished in 4.055997s, 8.3826 runs/s, 12.8205 assertions/s.
 34 runs, 52 assertions, 0 failures, 0 errors, 0 skips      
 root@6f5a2a946028:/app# 
 ```
-
----
 
 ## Seeding the database
 By default the database is seeded with two artists, four albums (2 each), and eight tracks (2 on each album). To start with a clean database you can either edit the entrypoint file and disable rails seeding or enter the bash terminal and clear the database in sqlite after the container has been started.
