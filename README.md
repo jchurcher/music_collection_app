@@ -8,7 +8,7 @@
 * [Seeds](#seeding-the-database)
 
 ## General Info
-This project is an example of using the ruby on rails framework to store and retrieve data in a relational database.
+This project is an example of using the Ruby on Rails MVC framework to store and retrieve data in a relational database. I created this project solo in my second year of university to show my understanding of relationships between data, MVC frameworks, and how they can be used to read and write this data from a relational database and then restructure it so it can be displayed to a user.
 
 ## Technologies
 * Ruby 2.5.1
@@ -45,7 +45,7 @@ localhost:3000
 ```
 The website contains four views: "Home", "Contact", "All Artists, "All Albums".
 
-<img class="img-fluid" src="./README/Homepage.png" alt="img-verification" width=50%>
+<img class="img-fluid" src="./README/Homepage.png" alt="img-verification" width=100%>
 
 ## Running tests
 All tests are held in the test directory which includes tests for the controllers, models, and the mailer along with fixtures (sample data). To run the test suite, access the bash of the rails container using the [command](#running-bash-on-rails-container) above. Then run:
@@ -109,4 +109,4 @@ newArtist.albums.last.tracks.create({
 
 ## Troubleshooting
 ### "A server is already running. Check /app/tmp/pids/server.pid."
-If this error occurs navigate to the file stated, the files should be a single number "1", change this to a "0" and restart the docker container.
+If this error occurs navigate to the file stated. Inside the file should be a single number which tells the server if it is already running, 1 meaning running and 0 meaning off. Set this flag to a 0 and restart the docker container.
